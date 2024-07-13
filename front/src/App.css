@@ -1,0 +1,107 @@
+/* styles.css */
+.mainContainer {
+  background-color: #e4d9d900;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  height: 100vh;
+}
+
+.header {
+  background: linear-gradient(to right, #0000FF, #87CEFA);
+  color: white;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.header .nav-buttons {
+  display: flex;
+}
+
+.header .nav-buttons button {
+  background-color: #76c7c0;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  margin: 0 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.header .nav-buttons button:hover {
+  background-color: #5ba9a3;
+}
+
+.main-content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.sidebar {
+  background: linear-gradient(to bottom, #003366, #0066cc);
+  color: white;
+  padding: 20px;
+  width: 200px;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  margin: 10px 0;
+  cursor: pointer;
+}
+
+.sidebar button:hover {
+  color: #cccccc;
+}
+
+/* Adaptações para telas mobile */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header .nav-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+  }
+
+  .main-content {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 10px;
+    flex-direction: row;
+    justify-content: space-around;
+    box-shadow: none;
+  }
+
+  .sidebar button {
+    flex: 1;
+    text-align: center;
+  }
+}

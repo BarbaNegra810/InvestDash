@@ -1,0 +1,9 @@
+<UploadForm isLogged={isLoggedIn} id={userId} onClose={() => setCurrentPage("home")} />
+
+  .sidebar {
+    width: 16rem;
+    background-color: var(--primary);
+    color: var(--primary-foreground);
+    display: flex;
+    flex-direction: column;
+  }
