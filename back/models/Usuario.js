@@ -1,8 +1,8 @@
 const mongoose = require("mongoose");
 
 /**
- * @summary Define o modelo de dados para armazenar os registros dos usuários
- *          timestamps na definição faz o mongodb incluir os registros de data e hora de criação, alteração etc.
+ * @summary Define o modelo de dados usado para armazenar as informaçõs dos usuários do sistema
+ *          
  * @author J. Barbosa
  * 
  */

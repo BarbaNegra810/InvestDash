@@ -1,3 +1,6 @@
+/**
+ * Funcões para permitir o upload de arquivos
+ */
 const router = require("express").Router();
 const multer = require("multer");
 const fs = require("fs");
@@ -20,7 +23,20 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+// Só permitimos arquivos PDF
+const fileFilter = (req, file, cb) => {
+  if (file.mimetype === "application/pdf") {
+    cb(null, true);
+  } else {
+    cb(new Error("Tipo de arquivo inválido"), false);
+  }
+};
+
+const upload = multer({ 
+  storage: storage,
+  fileFilter: fileFilter,
+  limits: { fileSize: 5 * 1024 * 1024 } // Max 5 MB
+});
 
 router.post(
   "/upload/:id",

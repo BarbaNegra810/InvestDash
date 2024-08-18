@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 /**
  * @summary Define o modelo de dados para armazenar o código de validação gerado para mudar a senha de acesso
- *          timestamps na definição faz o mongodb incluir os registros de data e hora de criação, alteração etc.
+ *          
  * @author J. Barbosa
  * 
  */

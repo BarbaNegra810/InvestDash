@@ -1,50 +1,57 @@
-import React, { useState } from "react";
-import "../styles/mainDash.css";
-import UploadForm from "./UploadForm";
+import React from 'react'
+import 
+{BsFileBarGraphFill , BsGrid1X2Fill, BsFillArchiveFill, BsFillGrid3X3GapFill, BsPeopleFill, 
+  BsListCheck, BsMenuButtonWideFill, BsFillGearFill}
+ from 'react-icons/bs'
 
-const Sidebar = ({ isLogged, id, onClose }) => {
-  const [showUploadForm, setShowUploadForm] = useState(false);
-
-  return (
-    <>
-      {isLogged && (
-        <div className="dash-container">
-          <aside className="sidebar">
-            <div className="logo-container">
-              <img
-                src="https://placehold.co/40x40?text=InvestDash"
-                alt="Logo"
-                className="logo"
-              />
-            </div>
-            <nav className="nav">
-              <ul>
-                <li
-                  className="nav-item"
-                  onClick={() => setShowUploadForm(true)}
-                >
-                  <img
-                    src="https://placehold.co/24x24?text=Upload"
-                    alt="Home"
-                    className="icon"
-                  />
-                  <span>Carregar PDF</span>
-                </li>
-                {/* Other list items */}
-              </ul>
-            </nav>
-          </aside>
-        </div>
-      )}
-      {showUploadForm && (
-        <UploadForm
-          isLogged={isLogged}
-          id={id}
-          onClose={() => setShowUploadForm(false)}
-        />
-      )}
-    </>
-  );
-};
-
-export default Sidebar;
+ function Sidebar({openSidebarToggle, OpenSidebar}) {
+    return (
+      <aside id="sidebar" className={openSidebarToggle ? "sidebar-responsive": ""}>
+          <div className='sidebar-title'>
+              <div className='sidebar-brand'>
+                  <BsFileBarGraphFill   className='icon_header'/> Menu
+              </div>
+              <span className='icon close_icon' onClick={OpenSidebar}>X</span>
+          </div>
+  
+          <ul className='sidebar-list'>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsGrid1X2Fill className='icon'/> Dashboard
+                  </a>
+              </li>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsFillArchiveFill className='icon'/> Products
+                  </a>
+              </li>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsFillGrid3X3GapFill className='icon'/> Categories
+                  </a>
+              </li>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsPeopleFill className='icon'/> Customers
+                  </a>
+              </li>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsListCheck className='icon'/> Inventory
+                  </a>
+              </li>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsMenuButtonWideFill className='icon'/> Reports
+                  </a>
+              </li>
+              <li className='sidebar-list-item'>
+                  <a href="">
+                      <BsFillGearFill className='icon'/> Setting
+                  </a>
+              </li>
+          </ul>
+      </aside>
+    )
+  }
+export default Sidebar

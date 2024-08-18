@@ -2,10 +2,11 @@
 import React, { useState } from "react";
 import LoginForm from "./components/LoginForm";
 import Register from "./components/Register";
-import Sidebar from "./components/Sidebar";
+import SidebarBox from "./components/SidebarBox";
 
 
-import "./App.css";
+import "./new.css";
+
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -34,14 +35,14 @@ const App = () => {
       default:
         return (
           <div>
-              <Sidebar isLogged={isLoggedIn} id={userId} onClose={() => setCurrentPage("home")} />
+              <SidebarBox isLogged={isLoggedIn} id={userId} onClose={() => setCurrentPage("home")} />
           </div>
         );
     }
   };
 
   return (
-    <div className="mainContainer">
+    <div className="grid-conteiner">
       <header className="header">
         <div className="logo">InvestDash</div>
         <div className="nav-buttons">
@@ -67,7 +68,7 @@ const App = () => {
           )}
         </div>
       </header>
-      <main className="main-content">{renderContent()}</main>
+      <main className="main-container">{renderContent()}</main>
     </div>
   );
 };

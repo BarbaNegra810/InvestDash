@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 /**
  * @summary Define o modelo de dados para armazenar os registros de um negócio 
- *          timestamps na definição faz o mongodb incluir os registros de data e hora de criação, alteração etc.
+ *          
  * @author J. Barbosa
  * 
  */
@@ -20,7 +20,7 @@ const NegocioSchema = new mongoose.Schema(
     ind_movimento: { type: String },
     data_negocio: { type: Date, required: true},
     corretora: { type: String, required: true},
-    usuario: { type: String, required: true},
+    id_usuario: { type: String, required: true},
 
       },
   { timestamps: true }

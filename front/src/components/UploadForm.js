@@ -59,6 +59,7 @@ const UploadForm = ({ isLogged, id, onClose }) => {
       setSelectedFile(null);
       fetchFiles(id); // Refresh the list of files
     } catch (error) {
+      setErrorMessage("Erro ao carregar o arquivo");
       console.error("Erro ao carregar o arquivo", error);
     }
   };

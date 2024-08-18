@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ForgotPasswordForm from "./ForgotPasswordForm";
-import "../styles/loginForm.css";
+//import "../styles/loginForm.css";
 
 const LoginForm = ({ onClose, onLoginSuccess }) => {
   const [email, setEmail] = useState("");

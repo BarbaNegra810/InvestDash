@@ -146,7 +146,7 @@ util.sendMail = async function (email, validCode) {
   sgMail
     .send(msg)
     .then(() => {
-      console.log("Email sent");
+      console.log("Foi...");
       return "Enviado";
     })
     .catch((error) => {
