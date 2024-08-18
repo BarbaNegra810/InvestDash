@@ -2,8 +2,8 @@
  * Servidor de APIs da aplicação investDash
  * @author José Barbosa
  * @todo
- *  
- *  
+ *
+ *
  *  */
 
 /**
@@ -34,24 +34,28 @@ dotenv.config();
  * Configurações da aplicação
  */
 
-
 const app = express();
 app.use(express.json());
 app.use(cors());
-
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "http://investdash.me");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.header("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+});
 
 /**
  * Conexão ao BD
  */
 
-mongoose.connect(process.env.MONGO_URL)
-.then(()=> {
+mongoose
+  .connect(process.env.MONGO_URL)
+  .then(() => {
     console.log("Database is connected");
-})
-.catch((err) => {
+  })
+  .catch((err) => {
     console.log(err);
-})
-
+  });
 
 /**
  * Rotas
@@ -67,5 +71,5 @@ app.use("/api/v1/", verifyCode);
  * Inicia a porta para receber requests
  */
 app.listen(process.env.PORT || 6500, () => {
-    console.log("Server is waiting for requests");
-})
+  console.log("Server is waiting for requests");
+});
