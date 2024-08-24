@@ -37,7 +37,10 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 
-options = { origin: "*"}
+const options = {
+  origin: 'http://investdash.me', // Permitir requisições apenas do domínio xxx.com  
+};
+
 app.use(cors(options));
 
 
