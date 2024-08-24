@@ -2,7 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import ForgotPasswordForm from "./ForgotPasswordForm";
-//import "../styles/loginForm.css";
+import "../new.css";
 
 const LoginForm = ({ onClose, onLoginSuccess }) => {
   const [email, setEmail] = useState("");
@@ -113,19 +113,19 @@ const LoginForm = ({ onClose, onLoginSuccess }) => {
             required
           />
           {error && <div className="error">{error}</div>}
-          <div>
-            <button type="submit" disabled={isLoading}>
+          <div className="nav-buttons">
+            <button  type="submit" disabled={isLoading}>
               {isLoading ? "Validando..." : "OK"}
             </button>
-            <button type="button" onClick={handleClear} disabled={isLoading}>
+            <button  type="button" onClick={handleClear} disabled={isLoading}>
               Limpar
             </button>
           </div>
-          <div>
+          <div className="nav-buttons" >
             <button type="button" onClick={handleForgotPassword}>
               Esqueci a senha
             </button>
-            <button className="close-button" onClick={onClose}>
+            <button onClick={onClose}>
             Fechar
           </button>
           </div>

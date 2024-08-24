@@ -39,7 +39,7 @@ body {
   
   /* Header  */
   .header {
-    background: linear-gradient(to right, #0000FF, #87CEFA);
+    background: linear-gradient(to right, #0d1b2a, #1b263b);
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -57,7 +57,7 @@ body {
   }
   
   .header .nav-buttons button {
-    background-color: #76c7c0;
+    background-color: #415a77;
     color: white;
     border: none;
     padding: 10px 15px;
@@ -68,7 +68,7 @@ body {
   }
   
   .header .nav-buttons button:hover {
-    background-color: #5ba9a3;
+    background-color: #778da9;
   }
   
   
@@ -81,7 +81,7 @@ body {
   #sidebar {
     grid-area: sidebar;
     height: 100%;
-    background-color: #263043;
+    background-color: #0d1b2a;
     overflow-y: auto;
     transition: all 0.5s;
     -webkit-transition: all 0.5s;

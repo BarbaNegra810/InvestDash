@@ -3,10 +3,9 @@ import React, { useState } from "react";
 import LoginForm from "./components/LoginForm";
 import Register from "./components/Register";
 import SidebarBox from "./components/SidebarBox";
-
+import Header from "./components/Header";
 
 import "./new.css";
-
 
 const App = () => {
   const [currentPage, setCurrentPage] = useState("home");
@@ -35,7 +34,11 @@ const App = () => {
       default:
         return (
           <div>
-              <SidebarBox isLogged={isLoggedIn} id={userId} onClose={() => setCurrentPage("home")} />
+            <SidebarBox
+              isLogged={isLoggedIn}
+              id={userId}
+              onClose={() => setCurrentPage("home")}
+            />
           </div>
         );
     }
@@ -52,6 +55,11 @@ const App = () => {
               <button onClick={() => setCurrentPage("register")}>
                 Cadastre-se
               </button>
+            </div>
+          )}
+          {isLoggedIn && (
+            <div>
+              <Header />
             </div>
           )}
           {isLoggedIn && (
