@@ -7,6 +7,7 @@ const PasswordResetForm = ({ email, code,  onClose }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,7 +20,7 @@ const PasswordResetForm = ({ email, code,  onClose }) => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post('http://localhost:6500/api/v1/resetPassword', {
+      const response = await axios.post(`${backEndUrl}:6500/api/v1/resetPassword`, {
         email: email,
         code: code,
         password: password,

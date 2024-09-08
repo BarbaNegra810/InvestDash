@@ -10,6 +10,7 @@ const LoginForm = ({ onClose, onLoginSuccess }) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isForgotPassword, setIsForgotPassword] = useState(false);
+  const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
@@ -34,7 +35,7 @@ const LoginForm = ({ onClose, onLoginSuccess }) => {
     // Simulate a login API call
     const login = async () => {
         try {
-            const response = await axios.post('http://localhost:6500/api/v1/login', {
+            const response = await axios.post(`${backEndUrl}:6500/api/v1/login`, {
                 email: email,
                 password: password
             }, {

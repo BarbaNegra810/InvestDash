@@ -10,6 +10,7 @@ const Register = ({ onClose }) => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 
   const validateEmail = (email) => {
     const re = /\S+@\S+\.\S+/;
@@ -44,7 +45,7 @@ const Register = ({ onClose }) => {
     const register = async () => {
       try {
         const response = await axios.post(
-          "http://localhost:6500/api/v1/registroUsuario",
+          `${backEndUrl}:6500/api/v1/registroUsuario`,
           {
             nomeUsuario: username,
             email: email,

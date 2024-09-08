@@ -14,6 +14,7 @@ const UploadForm = ({ isLogged, id, onClose }) => {
   const [selectedFile, setSelectedFile] = useState(null);
   const [uploadProgress, setUploadProgress] = useState(0);
   const [errorMessage, setErrorMessage] = useState("");
+  const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 
 
   useEffect(() => {
@@ -25,7 +26,7 @@ const UploadForm = ({ isLogged, id, onClose }) => {
   const fetchFiles = async (id) => {
     try {
       const response = await axios.get(
-        `http://localhost:6500/api/v1/listFiles/${id}`
+        `${backEndUrl}:6500/api/v1/listFiles/${id}`
       );
       setFiles(response.data);
     } catch (error) {
@@ -45,7 +46,7 @@ const UploadForm = ({ isLogged, id, onClose }) => {
     formData.append("file", selectedFile);
 
     try {
-      await axios.post(`http://localhost:6500/api/v1/upload/${id}`, formData, {
+      await axios.post(`${backEndUrl}:6500/api/v1/upload/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

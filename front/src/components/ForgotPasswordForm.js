@@ -9,6 +9,7 @@ const ForgotPasswordForm = ({ onClose, onBack }) => {
   const [isLoading, setIsLoading] = useState(false);
   const [isCodeSent, setIsCodeSent] = useState(false);
   const [clickedButton, setClickedButton] = useState('');
+  const backEndUrl = process.env.REACT_APP_BACKEND_URL;
   
 
   const validateEmail = (email) => {
@@ -32,7 +33,7 @@ const ForgotPasswordForm = ({ onClose, onBack }) => {
   if (clickedButton === 'b1') {
     console.log('Botão 1 foi clicado');
     try {
-      const response = await axios.post('http://localhost:6500/api/v1/generateCode', {
+      const response = await axios.post(`${backEndUrl}:6500/api/v1/generateCode`, {
         email: email
       }, {
         headers: {

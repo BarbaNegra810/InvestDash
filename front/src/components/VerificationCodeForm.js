@@ -8,6 +8,7 @@ const VerificationCodeForm = ({ email, onClose, onBack }) => {
   const [error, setError] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isVerified, setIsVerified] = useState(false);
+  const backEndUrl = process.env.REACT_APP_BACKEND_URL;
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -21,7 +22,7 @@ const VerificationCodeForm = ({ email, onClose, onBack }) => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:6500/api/v1/verifyCode",
+        `${backEndUrl}:6500/api/v1/verifyCode`,
         {
           email: email,
           code: code,
