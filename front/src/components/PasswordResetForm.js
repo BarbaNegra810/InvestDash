@@ -20,7 +20,7 @@ const PasswordResetForm = ({ email, code,  onClose }) => {
 
     setIsLoading(true);
     try {
-      const response = await axios.post(`${backEndUrl}:6500/api/v1/resetPassword`, {
+      const response = await axios.post("/api/v1/resetPassword", {
         email: email,
         code: code,
         password: password,

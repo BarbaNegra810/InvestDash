@@ -22,7 +22,7 @@ const VerificationCodeForm = ({ email, onClose, onBack }) => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        `${backEndUrl}:6500/api/v1/verifyCode`,
+        "/api/v1/verifyCode",
         {
           email: email,
           code: code,

@@ -33,7 +33,7 @@ const ForgotPasswordForm = ({ onClose, onBack }) => {
   if (clickedButton === 'b1') {
     console.log('Botão 1 foi clicado');
     try {
-      const response = await axios.post(`${backEndUrl}:6500/api/v1/generateCode`, {
+      const response = await axios.post("/api/v1/generateCode", {
         email: email
       }, {
         headers: {

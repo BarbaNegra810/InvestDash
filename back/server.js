@@ -38,7 +38,7 @@ const app = express();
 app.use(express.json());
 
 const options = {
-  origin: 'http://investdash.me', // Permitir requisições apenas do domínio xxx.com  
+  origin: '*', // Permitir requisições apenas do domínio xxx.com  
 };
 
 app.use(cors(options));

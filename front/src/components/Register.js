@@ -45,7 +45,7 @@ const Register = ({ onClose }) => {
     const register = async () => {
       try {
         const response = await axios.post(
-          `${backEndUrl}:6500/api/v1/registroUsuario`,
+          "/api/v1/registroUsuario",
           {
             nomeUsuario: username,
             email: email,

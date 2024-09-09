@@ -26,7 +26,7 @@ const UploadForm = ({ isLogged, id, onClose }) => {
   const fetchFiles = async (id) => {
     try {
       const response = await axios.get(
-        `${backEndUrl}:6500/api/v1/listFiles/${id}`
+        `/api/v1/listFiles/${id}`
       );
       setFiles(response.data);
     } catch (error) {
@@ -46,7 +46,7 @@ const UploadForm = ({ isLogged, id, onClose }) => {
     formData.append("file", selectedFile);
 
     try {
-      await axios.post(`${backEndUrl}:6500/api/v1/upload/${id}`, formData, {
+      await axios.post(`/api/v1/upload/${id}`, formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },

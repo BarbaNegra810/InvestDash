@@ -35,7 +35,7 @@ const LoginForm = ({ onClose, onLoginSuccess }) => {
     // Simulate a login API call
     const login = async () => {
         try {
-            const response = await axios.post(`${backEndUrl}:6500/api/v1/login`, {
+            const response = await axios.post("/api/v1/login", {
                 email: email,
                 password: password
             }, {
